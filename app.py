@@ -87,7 +87,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": f"Excelente, para calcular el amperaje necesito que me proporciones la potencia en watts y el voltaje en volts. ¿Podrías proporcionarme esos datos?"
+                "body": "Excelente, para calcular el amperaje necesito que me proporciones la potencia en watts y el voltaje en volts. ¿Podrías proporcionarme esos datos?"
             }
         }
     elif "btnCable" in texto:
@@ -98,7 +98,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": f"Excelente, El cable es el siguiente"
+                "body": "Excelente, El cable es el siguiente"
             }
         }
 
