@@ -70,7 +70,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "🚀 Hola, ¿Cómo estás? Bienvenido."
+                "body": f"🚀 Hola, ¿Cómo estás? Bienvenido. {number}"
             }
         }
     else:
