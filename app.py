@@ -87,16 +87,16 @@ def enviar_mensajes_whatsapp(texto,number):
 
     #Convertir el diccionaria a formato JSON
     data=json.dumps(data)
-
+    identificador = "EAAREvz1E5l8BOxY4A5TuRDix5ZBYZBAFZCsMx1SomDm3OTW9DOTxnoNHuUVICFHKaPYy7RKI6I8JXZBZAGBjjVlbfzR1L0Hwb6mta4FwMVMQb9apo11ZAb8bjPTsb76WvqEpabmoaA0GiLTmCfa8PZBWrquRxFUDjkRYoT0YVFLNo3xtTlZCWuZCJg9C6oRgZBRVFpLZBCzvgcBCVjMoKjZA19QZD"
     headers = {
         "Content-Type" : "application/json",
-        "Authorization" : "Bearer EAAM1QqlQV90BO2QbeOuwedmZAgbAHfCnZBUmQsjP3phs4UEK2fRuYGbZBH7B8nEz3QhV4wt4NEhgfZCvUOQCxZAeNGnaZBBfmMA4ipeMiPD43d2gvxzMrebJm3hilKHcYwOCxZCZCcxJau1wrgugRGehuzs8ZC7jCHzr9lluJvcfUAiYwK5IuQGG7rd4Bz6MoZB902TGkIYdVZBEB1XGzfCOS1HxKccJiv4YLdGcUYZD"
+        "Authorization" : f"Bearer {identificador}"
     }
 
     connection = http.client.HTTPSConnection("graph.facebook.com")
 
     try:
-        connection.request("POST","/v18.0/117721278011867/messages", data, headers)
+        connection.request("POST","/v20.0/312280328646454/messages", data, headers)
         response = connection.getresponse()
         print(response.status, response.reason)
     except Exception as e:
