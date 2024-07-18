@@ -67,7 +67,6 @@ def enviar_mensajes_whatsapp(texto,number):
     else:  
         numero = number
         
-
     
     if "hola" in texto:
         data={
@@ -80,15 +79,62 @@ def enviar_mensajes_whatsapp(texto,number):
                 "body": f"🚀 Hola, ¿Cómo estás? Bienvenido. {number} cambiado {numero}"
             }
         }
-    else:
-        data={
+    elif "btnAmperaje" in texto:
+                data={
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": numero,
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "Hola Bienvenido a Garfex, ¿En qué puedo ayudarte?"
+                "body": f"Excelente, para calcular el amperaje necesito que me proporciones la potencia en watts y el voltaje en volts. ¿Podrías proporcionarme esos datos?"
+            }
+        }
+    elif "btnCable" in texto:
+                data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": numero,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": f"Excelente, El cable es el siguiente"
+            }
+        }
+
+
+    
+    else:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                "text": "¿En que puedo ayudarte?"
+                },
+                "footer": {
+                    "text": "Selecciona una de las opciones"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnAmperaje",
+                                "title":"Calcula Amperaje?"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnCable",
+                                "title":"Que Cable Necesito?"
+                            }
+                        }
+                    ]
+                }
             }
         }
 
