@@ -76,7 +76,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": f"🚀 Hola, ¿Cómo estás? Bienvenido. {number} cambiado {numero}"
+                "body": f"🚀 Hola, ¿Cómo estás? Bienvenido."
             }
         }
     elif "btnAmperaje" in texto:
@@ -108,7 +108,7 @@ def enviar_mensajes_whatsapp(texto,number):
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
-            "to": number,
+            "to": numero,
             "type": "interactive",
             "interactive":{
                 "type":"button",
