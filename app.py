@@ -61,16 +61,23 @@ def recibir_mensajes(req):
     
 def enviar_mensajes_whatsapp(texto,number):
     texto = texto.lower()
+
+    if len(number) == 13:
+        numero = number[:2]+number[3:]
+    else:  
+        numero = number
+        
+
     
     if "hola" in texto:
         data={
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
-            "to": "525511930515",
+            "to": numero,
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": f"🚀 Hola, ¿Cómo estás? Bienvenido. {number}"
+                "body": f"🚀 Hola, ¿Cómo estás? Bienvenido. {number} cambiado {numero}"
             }
         }
     else:
